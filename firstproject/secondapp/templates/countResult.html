@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .c1{
+                margin-left:400px;
+                width:700px;
+                height:100px;
+                background-color: bisque;
+                border:1px solid navy;
+                text-decoration:underline;
+            }
+            body{
+                text-align:center;
+                background-color: mistyrose;
+                font-family:"맑은고딕",굴림,돋움 ;
+            }
+            p{
+                font-weight: bold;
+                background-color: olive;
+                color: white;
+            }
+            .c2{
+                margin-left:400px;
+                width:700px;
+                height:800px;
+                background-color: wheat;
+                color:red;
+                border:1px solid navy;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="c1">
+            <h1>wordCount 결과입니다.</h1>
+        </div>  
+        <br>
+        <div>{{w_input}}</div>
+        <p>당신이 입력한 word_input은 총 {{len}}개 입니다.</p>
+       <div class="c2">
+        {% for key,value in countDict %}
+            {{key}} : {{value}} 개가 있습니다.
+            <br>
+        {% endfor %}
+        </div>
+    </body>
+</html>
