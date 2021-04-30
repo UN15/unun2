@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WELCOME</title>
+    <style>
+        body {
+
+            text-align: center;
+            background-color: mistyrose;
+            font-family: "맑은고딕", 굴림, 돋움;
+        }
+
+        .element {
+            position: relative;
+            left: 35%;
+            width: 500px;
+            height: 200px;
+            border: 1px solid black;
+            background-color: white;
+        }
+
+        .button {
+            border: 1px solid black;
+            padding: 4px 12px;
+            margin-top: 15px;
+            display: inline-block;
+            background-color: navy;
+            border-radius: 20px;
+        }
+    
+        .button2 {
+            border: 1px solid black;
+            padding: 4px 12px;
+            margin-top: 15px;
+            display: inline-block;
+            background-color: skyblue;
+            border-radius: 20px;
+        }
+        
+        a {
+            color: white;
+        }
+        a:hover {
+            color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <h1><span background-color="white" ;>Welcome! this is my blog page</span></h1>
+    <hr size="3" color="black">
+    <div>
+        {% for blogelement in blogupdates %}
+        <div class="element">
+            <h2>{{blogelement.title}}</h2>
+            {{blogelement.writer}}
+            {{blogelement.summary}}
+            <br>
+            <span class="button">
+                <a href="{% url 'subpage' blogelement.id %}">..보러가기</a>
+            </span>
+            <br>
+        </div>
+        <br>
+        {% endfor %}
+        <span class="button2">
+            <a href="{% url 'newpage' %}">새로운 글 작성하러 가기</a>
+        </span>
+
+    </div>
+
+</body>
+
+</html>
