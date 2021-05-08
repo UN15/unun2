@@ -1,0 +1,16 @@
+{% extends 'navbar.html' %}
+{% block content%}
+<span class="title">Second Blog</span>
+<br><br>
+{% for object in obj2 %}
+<div class="main">
+    <h2>{{object.title}}</h2>
+    {{object.writer}}
+    {{object.summary}}
+    <br>
+    <a href="{% url 'blogsub2' object.id %}">...more</a>
+</div>
+<br>
+{% endfor %}
+
+{% endblock %}

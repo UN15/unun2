@@ -1,0 +1,12 @@
+{% extends 'navbar.html' %}
+
+{% block content%}
+<h1>Write your new blogpage</h1>
+<form action="{% url 'create2' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{b_form.as_p}}
+    <br>
+    <button type="submit">제출하기</button>
+</form>
+
+{% endblock %}

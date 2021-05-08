@@ -1,0 +1,22 @@
+{% extends 'navbar.html' %}
+
+{% block content%}
+<span class="sub">{{sub2id.title}}</span>
+<div>
+    <br>
+    {{sub2id.writer}}
+    {{sub2id.pub_date}}
+</div>
+<hr size="5" color="black">
+<br>
+{% if sub2id.image %}
+<div class=img><img src="{{sub2id.image.url}}" alt="" width="600" height="500"></div>
+{% endif %}
+<p>{{sub2id.body}}</p>
+<span class="button">
+    <a href="{% url 'edit2' sub2id.id %}">수정하기</a>
+</span>
+<span class="button2">
+    <a href="{% url 'delete2' sub2id.id %}">삭제하기</a>
+</span>
+{% endblock %}

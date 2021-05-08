@@ -1,0 +1,16 @@
+{% extends 'navbar.html' %}
+
+{% block content%}
+<h1>Change your blogpage</h1>
+<form action="{% url 'update2' e2blog.id %}" method="post">
+    {% csrf_token %}
+    제목<br>
+    <p><input type="text" name="new2title" value="{{e2blog.title}}"></p>
+    작성자<br>
+    <p><input type="text" name="new2writer" value="{{e2blog.writer}}"></p>
+    본문<br>
+    <p><textarea name="new2body" id="" cols="50" rows="20">{{e2blog.body}}</textarea></p>
+    <button type="submit">제출하기</button>
+</form>
+
+{% endblock %}

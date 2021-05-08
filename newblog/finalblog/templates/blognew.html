@@ -1,0 +1,15 @@
+{% extends 'navbar.html' %}
+{% block content %}
+
+<h1>Write your new blogpage</h1>
+<form action="{% url 'create' %}" method="post">
+    {% csrf_token %}
+    제목<br>
+    <p><input type="text" name="n_title"></p>
+    작성자<br>
+    <p><input type="text" name="n_writer"></p>
+    본문<br>
+    <p><textarea name="n_body" id="" cols="50" rows="20"></textarea></p>
+    <button type="submit">제출하기</button>
+</form>
+{% endblock %}
